@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9f00bb2357.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Painel de Controle</title>
+    <style>
+        .navigation ul li:nth-child(3) {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(3):hover {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(3) span {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .navigation ul li:nth-child(3) span:hover {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(3) span .fa-store {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--BARRA DE NAVEGAÇÃO LATERAL-->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="logo"><img src="" alt=""></i></span>
+                        <span class="title nomeEmpresa">
+                            <h2>SITE</h2>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="painel_de_controle.html">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">
+                            Painel de Controle
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="minha_loja.html">
+                        <span class="icon"><i class="fas fa-store"></i></span>
+                        <span class="title">
+                            MINHA LOJA
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html">
+                        <span class="icon"><i class="fas fa-box-open"></i></span>
+                        <span class="title">
+                            PRODUTOS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <span class="icon"><i class="fas fa-stream"></i></span>
+                        <span class="title">
+                            CATEGORIAS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subcategorias.html">
+                        <span class="icon"><i class="fas fa-window-restore"></i></span>
+                        <span class="title">
+                            SUB-CATEGORIAS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="banners.html">
+                        <span class="icon"><i class="fas fa-bookmark"></i></span>
+                        <span class="title">
+                            BANNERS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrossel.html">
+                        <span class="icon"><i class="fab fa-buffer"></i></span>
+                        <span class="title">
+                            CARROSSEL
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clientes.html">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="title">
+                            CLIENTES CADASTRADOS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="gerentes.html">
+                        <span class="icon"><i class="fas fa-user-edit"></i></span>
+                        <span class="title">
+                            GERENTES
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--FIM BARRA DE NAVEGAÇÃO LATERAL-->
+
+        <!--BARRA DO TOPO-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu()">
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+                <div class="search">
+                    <lable>
+                        <input type="text" placeholder="Pesquise Aqui">
+                        <i class="fas fa-search"></i>
+                    </lable>
+                </div>
+                <div class="user">
+                    <img src="imagens/user_placeholder.jpg" alt="">
+                </div>
+            </div>
+            <!--FIM BARRA DO TOPO-->
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,042</div>
+                        <div class="cardName">Visualizações Diarias</div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="far fa-eye"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">850</div>
+                        <div class="cardName">Produtos Cadastrados</div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">208</div>
+                        <div class="cardName">Clientes Cadastrados</div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="far fa-address-card"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">6</div>
+                        <div class="cardName">Gerentes</div>
+                    </div>
+                    <div class="iconBox">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row detalhes">
+                    <div class="col coluna c1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>CATEGORIAS ATIVAS:</td>
+                                    <td>CATEGORIAS DESATIVADAS:</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li>Agrícola</li>
+                                            <li>Cozinhas e Restaurantes</li>
+                                            <li>Defensivos e Fertilizantes</li>
+                                            <li>Ferramentas</li>
+                                            <li>Irrigação e Hidráulica</li>
+                                            <li>Máquinas</li>
+                                            <li>Outros</li>
+                                        </ul>
+                                    </td>
+                                    <td>Nenhuma... </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img class="img-fluid" src="imagens/user_placeholder.jpg" alt="">
+                                        <p>Gerente 1</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-fluid" src="imagens/user_placeholder.jpg" alt="">
+                                        <p>Gerente 2</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-fluid" src="imagens/user_placeholder.jpg" alt="">
+                                        <p>Gerente 3</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-fluid" src="imagens/user_placeholder.jpg" alt="">
+                                        <p>Gerente 4</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-fluid" src="imagens/user_placeholder.jpg" alt="">
+                                        <p>Gerente 5</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="img-fluid" src="imagens/user_placeholder.jpg" alt="">
+                                        <p>Gerente 6</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col coluna c2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>SUBCATEGORIAS ATIVAS:</td>
+                                    <td>SUBCATEGORIAS DESATIVADAS:</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ul>
+                                            <li>Adesivos e Colas</li>
+                                            <li>Acessórios</li>
+                                            <li>Roçadeiras e Cortadores</li>
+                                            <li>Engenhos e Moendas</li>
+                                            <li>Lubrificantes para Máquinario</li>
+                                            <li>Motocultivadores</li>
+                                            <li>Motosseras</li>
+                                            <li>Picadores e Trituradores</li>
+                                            <li>Pulverizadores e Atomizadores</li>
+                                            <li>Sementes</li>
+                                            <li>Sopradores e Aspiradores</li>
+                                            <li>Telas</li>
+                                            <li>Produtos Veterinários</li>
+                                            <li>Amaciadores / Despolpadeiras</li>
+                                            <li>Batedeiras / Batedores</li>
+                                            <li>Cafeteiras</li>
+                                            <li>Chapas / Sanduicheiras</li>
+                                            <li>Cilindros / Sovadeiras</li>
+                                            <li>Derretedeiras</li>
+                                            <li>Escorredores</li>
+                                            <li>Utensílios</li>
+                                            <li>Esterelizadores</li>
+                                            <li>Estufas / Carros Térmicos</li>
+                                            <li>Facas / Afiadores</li>
+                                            <li>Fatiadores / Cortadores</li>
+                                            <li>Filtros / Bebedouros</li>
+                                            <li>Formas / Assadeiras</li>
+                                            <li>Fornos / Fogões</li>
+                                            <li>Fritadeiras</li>
+                                            <li>Garrafas / Caixas Térmicas</li>
+                                            <li>Liquidificadores / Espremedores</li>
+                                            <li>Máquinas Diversas</li>
+                                            <li>Marmiteiros</li>
+                                            <li>Misturadores</li>
+                                            <li>Modeladores / Amassadeiras</li>
+                                            <li>Panelas / Diversos</li>
+                                            <li>Processadores de Alimento</li>
+                                            <li>Refresqueiras</li>
+                                            <li>Tachos / Pasteleiros</li>
+                                            <li>Torres de Chopp</li>
+                                            <li>Fertilizantes</li>
+                                            <li>Inseticidas</li>
+                                            <li>Fungicidas</li>
+                                            <li>Herbicidas</li>
+                                            <li>Linha Profissional</li>
+                                            <li>Pragas Urbanas</li>
+                                            <li>Cadeados</li>
+                                            <li>Caixas</li>
+                                            <li>Carregadores</li>
+                                            <li>Construção</li>
+                                            <li>Cordas</li>
+                                            <li>E.P.I.S</li>
+                                            <li>Escadas</li>
+                                            <li>Ferramentas / Acessórios</li>
+                                            <li>Manuais</li>
+                                            <li>Marcenaria</li>
+                                            <li>Serras</li>
+                                            <li>Aspersores</li>
+                                            <li>Bocais</li>
+                                            <li>Bombas</li>
+                                            <li>Conexões</li>
+                                            <li>Conexões Galvanizadas</li>
+                                            <li>Controladores</li>
+                                            <li>Esgoto</li>
+                                            <li>Mangueiras</li>
+                                            <li>Sensores</li>
+                                            <li>Válvulas</li>
+                                            <li>Aspiradores</li>
+                                            <li>Betoneiras</li>
+                                            <li>Compressores</li>
+                                            <li>Lavadoras de Alta Pressão</li>
+                                            <li>Máquinas de Solda</li>
+                                            <li>Moto Esmeril</li>
+                                            <li>Motobombas</li>
+                                            <li>Motores / Geradores</li>
+                                            <li>Ambulantes</li>
+                                            <li>Carro Armazém</li>
+                                            <li>Conduítes / Conectores</li>
+                                            <li>Diversos</li>
+                                            <li>Gaveteiros</li>
+                                            <li>Isoladores</li>
+                                            <li>Lixeiras</li>
+                                            <li>Lonas</li>
+                                            <li>Mesas / Cadeiras</li>
+                                            <li>Pallets / Estrados</li>
+                                            <li>Peneiras</li>
+                                            <li>Pneus / Câmaras</li>
+                                            <li>Rodas / Rodízios</li>
+                                            <li>Sinalizadores</li>
+                                            <li>Utilidades / Diversas</li>
+                                            <li>Vasilhames / Caixas</li>
+                                        </ul>
+                                    </td>
+                                    <td>Nenhuma... </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        };
+    </script>
+</body>
+
+</html>

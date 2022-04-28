@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9f00bb2357.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Painel de Controle</title>
+    <style>
+        .navigation ul li:nth-child(5) {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(5):hover {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(5) span {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .navigation ul li:nth-child(5) span:hover {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(5) span .fa-stream {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--BARRA DE NAVEGAÇÃO LATERAL-->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="logo"><img src="" alt=""></i></span>
+                        <span class="title nomeEmpresa">
+                            <h2>SITE</h2>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="painel_de_controle.html">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">
+                            Painel de Controle
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="minha_loja.html">
+                        <span class="icon"><i class="fas fa-store"></i></span>
+                        <span class="title">
+                            MINHA LOJA
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html">
+                        <span class="icon"><i class="fas fa-box-open"></i></span>
+                        <span class="title">
+                            PRODUTOS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <span class="icon"><i class="fas fa-stream"></i></span>
+                        <span class="title">
+                            CATEGORIAS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subcategorias.html">
+                        <span class="icon"><i class="fas fa-window-restore"></i></span>
+                        <span class="title">
+                            SUB-CATEGORIAS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="banners.html">
+                        <span class="icon"><i class="fas fa-bookmark"></i></span>
+                        <span class="title">
+                            BANNERS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrossel.html">
+                        <span class="icon"><i class="fab fa-buffer"></i></span>
+                        <span class="title">
+                            CARROSSEL
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clientes.html">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="title">
+                            CLIENTES CADASTRADOS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="gerentes.html">
+                        <span class="icon"><i class="fas fa-user-edit"></i></span>
+                        <span class="title">
+                            GERENTES
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--FIM BARRA DE NAVEGAÇÃO LATERAL-->
+
+        <!--BARRA DO TOPO-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu()">
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+                <div class="search">
+                </div>
+                <div class="user">
+                    <img src="imagens/user_placeholder.jpg" alt="">
+                </div>
+            </div>
+            <!--FIM BARRA DO TOPO-->
+
+            <div class="cadastro_categorias">
+                <form action="#">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input name="nome" type="text">
+
+                        <label for="tag">Tag</label>
+                        <input name="tag" type="text" placeholder="#">
+                    </div>
+                    <div>
+                        <label for="banner">Banner</label>
+                        <input name="banner" type="file" name="" id="">
+
+                        <img src="imagens/Placeholder.png" alt="">
+                    </div>
+                    <div>
+                        <button>SALVAR INFORMAÇÕES</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/script.js"></script>
+
+        <script>
+            function toggleMenu() {
+                let toggle = document.querySelector('.toggle');
+                let navigation = document.querySelector('.navigation');
+                let main = document.querySelector('.main');
+
+                toggle.classList.toggle('active');
+                navigation.classList.toggle('active');
+                main.classList.toggle('active');
+            };
+        </script>
+</body>
+
+</html>

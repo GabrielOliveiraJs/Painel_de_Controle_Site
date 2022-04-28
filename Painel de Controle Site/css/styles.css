@@ -1,0 +1,2828 @@
+/****************************************************************ESTILIZAÇÃO GERAL*********************************************************************/
+@import url(fontawesome-free-5.15.4-web/less/_variables.less);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+:root {
+    --background: #DCDCDC;
+    --vermelho_escuro: #B22222;
+    --vermelho_claro: #FF0000;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/************************************************************FIM ESTILIZAÇÃO GERAL*******************************************************************/
+
+/**********************************************************BARRA DE NAVEGAÇÃO LATERAL****************************************************************/
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--vermelho_escuro);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    transition: background 0.2s;
+}
+
+.navigation ul li:hover {
+    background: var(--vermelho_claro);
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 20px;
+}
+
+.navigation ul li:nth-child(1):hover {
+    background: transparent;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fas, .navigation ul li a .icon .fab {
+    color: #fff;
+    font-size: 24px;
+}
+
+.navigation ul li a .icon .logo {
+    position: relative;
+    display: block;
+    padding: 15px 6px;
+}
+
+.navigation ul li a .nomeEmpresa {
+    margin-top: 10px;
+}
+
+.navigation ul li a .icon i img {
+    min-width: 50px;
+    height: 50px;
+    position: relative;
+    display: block;
+    background-color: #f5f5f5;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transform: 0.5s;
+    transition: 0.5s;
+}
+
+/**********************************************************FIM BARRA DE NAVEGAÇÃO LATERAL************************************************************/
+
+/*****************************************************************BARRA DO TOPO**********************************************************************/
+.main.active {
+    width: calc(100% - 60px);
+    transition: 0.5s;
+    left: 60px;
+}
+
+.main .topbar {
+    width: 100%;
+    background: #fff;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle span i {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.toggle span i::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: #111;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search lable input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.search lable .fas {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+}
+
+.user {
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*************************************************************FIM BARRA DO TOPO**********************************************************************/
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.cardBox .card .cardName {
+    color: #999;
+}
+
+.cardBox .card .iconBox {
+    font-size: 2.5em;
+    color: var(--vermelho_claro);
+}
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.details .recentOrders {
+    position: relative;
+    min-width: 530px;
+    background: #fff;
+    padding: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--vermelho_escuro);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color, 1s;
+}
+
+.cardHeader .btn:hover {
+    background: var(--vermelho_claro);
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td {
+    font-weight: 600;
+}
+
+.details .recentOrders table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentOrders table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.details .recentOrders table tbody tr:hover {
+    background: #03a9f4;
+    color: #fff;
+    cursor: default;
+}
+
+.details .recentOrders table tr td {
+    padding: 9px 5px;
+}
+
+.details .recentOrders table tbody tr td:last-child,
+.details .recentOrders table thead tr td:last-child {
+    text-align: right;
+}
+
+.details .recentOrders table tbody tr td:nth-child(2),
+.details .recentOrders table thead tr td:nth-child(2) {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.details .recentOrders table tbody tr td:nth-child(3),
+.details .recentOrders table thead tr td:nth-child(3) {
+    text-align: center;
+}
+
+.status {
+    position: relative;
+    padding: 2px 4px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.delivered {
+    background: #8de02c;
+}
+
+.pending {
+    background: #f9ca3f;
+}
+
+.return {
+    background: #f00;
+}
+
+.inProgress {
+    background: #1795ce;
+}
+
+/**************************************************************INFORMAÇÕES DETALHADAS****************************************************************/
+.detalhes {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.detalhes div table {
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.detalhes .c1 {
+    position: relative;
+    width: 50%;
+    display: inline-block;
+    margin: 25px 0px 0px 15px;
+}
+
+.detalhes .c2 {
+    position: relative;
+    width: 40%;
+    float: right;
+    margin: 25px;
+}
+
+.detalhes .coluna table thead td {
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.detalhes .coluna table tbody {
+    position: relative;
+    border: solid 1.5px #C0C0C0;
+    line-height: 30px;
+}
+
+.detalhes .coluna table tbody tr td {
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    cursor: default;
+}
+
+.detalhes .coluna table tbody tr td ul {
+    list-style: none;
+    position: relative;
+}
+
+.detalhes .coluna table tbody tr td ul li {
+    border-bottom: solid 0.5px #C0C0C0;
+}
+
+.detalhes .coluna table tbody tr td ul li:nth-child(7) {
+    border: none;
+}
+
+.detalhes .coluna table tbody tr td ul li:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+.detalhes .coluna table tbody {
+    border: solid 1px #C0C0C0;
+    position: relative;
+}
+
+.detalhes .coluna table tbody tr {
+    border-bottom: solid 0.5px #C0C0C0;
+    padding: 5px;
+    position: relative;
+}
+
+.detalhes .coluna table tbody tr td {
+    vertical-align: middle;
+}
+
+.detalhes .coluna table tbody tr td img {
+    width: 60px;
+    position: relative;
+    float: left;
+    margin: 8px;
+}
+
+.detalhes .coluna table tbody tr td p {
+    display: flex;
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+/************************************************************FIM INFORMAÇÕES DETALHADAS**************************************************************/
+
+.details .recentCustomers {
+    position: relative;
+    min-height: 530px;
+    background: #fff;
+    padding: 20px;
+}
+
+.details .recentCustomers .imgBx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.details .recentCustomers .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details .recentCustomers table tr td h4 span {
+    font-size: 14px;
+    color: #999;
+}
+
+.details .recentCustomers table tr:hover,
+.details .recentCustomers table tr:hover td h4 span {
+    background: #03a9f4;
+    color: #fff;
+}
+
+.details .recentCustomers table tr td {
+    padding: 7px 10px;
+}
+
+.details .recentCustomers table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+/************************************************************PÁGINA PRODUTOS*************************************************************************/
+.pesquisa_ordem_alfabetica {
+    position: relative;
+}
+
+.letras_alfabetica {
+    position: relative;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.letras_alfabetica ul {
+    list-style: none;
+}
+
+.letras_alfabetica ul li {
+    display: inline-block;
+    padding: 0px;
+}
+
+.letras_alfabetica ul li button {
+    font-size: 25px;
+    font-weight: 600;
+    border: solid 0.5px;
+    padding: 2px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.letras_alfabetica ul li button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.subcategorias {
+    position: relative;
+    text-align: center;
+}
+
+.subcategorias form {
+    position: relative;
+}
+
+.subcategorias form select {
+    width: 300px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.subcategorias form button {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.subcategorias form button:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+    transition: box-shadow 0.3s;
+}
+
+.subcategorias form button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.selecao_pordutos {
+    position: relative;
+}
+
+.selecao_pordutos table {
+    position: relative;
+    border: solid 0.5px #C0C0C0;
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px 10px;
+    position: relative;
+    text-align: center;
+    padding: 0%;
+}
+
+.selecao_pordutos table thead tr td h3 {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.selecao_pordutos table thead tr td img {
+    width: 5vw;
+    padding: 0;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.selecao_pordutos table thead tr td input {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.selecao_pordutos table thead tr td label {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.selecao_pordutos table thead tr td button {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    margin: 0px 5px;
+}
+
+.selecao_pordutos table thead tr td button:nth-child(1) {
+    background-color: #00a6f3;
+}
+
+.selecao_pordutos table thead tr td button:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.selecao_pordutos table thead tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.selecao_pordutos table thead tr td button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.selecaoPaginas {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.selecaoPaginas ul {
+    list-style: none;
+}
+
+.selecaoPaginas ul li {
+    display: inline-block;
+    border: solid 0.5px #000;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0px 2px;
+}
+
+.selecaoPaginas ul li:nth-child(12) {
+    border: none;
+    cursor: default;
+}
+
+.selecaoPaginas ul li:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+}
+
+.selecaoPaginas ul li:nth-child(1), .selecaoPaginas ul li:nth-child(14) {
+    border: none;
+    color: transparent;
+}
+
+.selecaoPaginas ul li a {
+    color: #000;
+}
+
+.botao_inclui_produto {
+    position: relative;
+    text-align: end;
+    padding: 3vw 3vw 0vw 0vw;
+}
+
+.botao_inclui_produto button {
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color: #8de02c;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.5s;
+}
+
+.botao_inclui_produto button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.botao_inclui_produto button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+/*******************************INCLUSÃO DE PRODUTOS***************************************/
+.manipular_dados {
+    position: relative;
+}
+
+.manipular_dados .col_1 {
+    position: relative;
+    width: 50%;
+    padding: 20px 10px;
+    float: left;
+}
+
+.manipular_dados .col_2 {
+    position: relative;
+    width: 50%;
+    float: right;
+    padding: 20px 10px;
+}
+
+.manipular_dados label {
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+}
+
+.manipular_dados input {
+    width: 100%;
+    padding: 6px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.manipular_dados textarea {
+    width: 100%;
+    height: 10vw;
+    padding: 6px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.manipular_dados select {
+    padding: 6px;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    width: 50%;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.manipular_imagens {
+    position: relative;
+
+}
+
+.manipular_imagens .col_1 {
+    width: 50%;
+    float: left;
+    clear: both;
+    text-align: center;
+    position: relative;
+}
+
+.manipular_imagens .col_2 {
+    width: 50%;
+    float: right;
+    text-align: center;
+    padding: 0px 15px;
+    position: relative;
+}
+
+.manipular_imagens .col_1 input {
+    width: 60%;
+    padding: 6px;
+    position: relative;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.manipular_imagens .col_1 button {
+    background-color: var(--vermelho_escuro);
+    color: #fff;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+
+.manipular_imagens .col_1 button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.manipular_imagens .col_1 button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.manipular_imagens .col_1 img {
+    width: 450px;
+    border-radius: 10px;
+}
+
+.manipular_imagens .col_2 table tbody tr td img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+.manipular_imagens .col_2 div label {
+    display: inline-block;
+}
+
+.manipular_imagens .col_2 table tbody tr td input {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin: 0px 15px;
+}
+
+.manipular_imagens .col_2 table tbody tr td label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.manipular_imagens .col_2 table tbody tr td button {
+    margin: 0px 25px;
+    background-color: var(--vermelho_claro);
+    color: #fff;
+    border: none;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.manipular_imagens .col_2 table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.manipular_imagens .col_2 table tbody tr td button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+
+#fonte {
+    display: none;
+}
+
+.salvar_informacoes {
+    width: 100%;
+    position: relative;
+    height: auto;
+    float: left;
+    text-align: center;
+    margin: 15px 5px;
+}
+
+.salvar_informacoes button {
+    background-color: #8de02c;
+    color: #fff;
+    border: none;
+    padding: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    width: 60%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.salvar_informacoes button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.salvar_informacoes button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+/**********************************************************FIM PÁGINA PRODUTOS***********************************************************************/
+
+/**********************************************************PÁGINA CATEGORIAS*************************************************************************/
+.ordem_alfabetica_categorias {
+    position: relative;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.ordem_alfabetica_categorias ul {
+    list-style: none;
+    position: relative;
+}
+
+.ordem_alfabetica_categorias ul li {
+    display: inline-block;
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    border: solid 0.5px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 0px 1px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+.ordem_alfabetica_categorias ul li:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.adicionar_categoria {
+    position: relative;
+    padding: 15px 30px 0px 30px;
+    text-align: end;
+}
+
+.adicionar_categoria button {
+    position: relative;
+    padding: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    background-color: #8de02c;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.adicionar_categoria button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.adicionar_categoria button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.lista_categorias {
+    position: relative;
+}
+
+.lista_categorias table {
+    position: relative;
+    border: solid 0.5px;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 99%;
+    margin: 10px 10px;
+}
+
+.lista_categorias table tbody {
+    position: relative;
+    padding: 0;
+    text-align: center;
+}
+
+.lista_categorias table tbody tr {
+    position: relative;
+    padding: 0px 10px;
+}
+
+.lista_categorias table tbody tr td {
+    width: 25%;
+}
+
+.lista_categorias table tbody tr td h3 {
+    font-size: 20px;
+}
+
+.lista_categorias table tbody tr td img {
+    width: 20vw;
+    border-radius: 5px;
+}
+
+.lista_categorias table tbody tr td p {
+    font-weight: 600;
+}
+
+.lista_categorias table tbody tr td button {
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.lista_categorias table tbody tr td button:nth-child(1) {
+    background-color: #00a6f3;
+}
+
+.lista_categorias table tbody tr td button:nth-child(2) {
+    background-color: var(--vermelho_claro);
+}
+
+.lista_categorias table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.lista_categorias table tbody tr td button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.paginasCategorias {
+    position: relative;
+    text-align: center;
+    padding: 8px 0px;
+}
+
+.paginasCategorias ul {
+    list-style: none;
+}
+
+.paginasCategorias ul li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 2px 8px;
+    cursor: pointer;
+    background-color: #fff;
+    margin: 0px 2px;
+}
+
+.paginasCategorias ul li:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.paginasCategorias ul li:nth-child(10) {
+    background: transparent;
+    cursor: default;
+}
+
+.paginasCategorias ul li:nth-child(1), .paginasCategorias ul li:nth-child(10), .paginasCategorias ul li:nth-child(12) {
+    border: none;
+    background: transparent;
+}
+
+.paginasCategorias ul li a {
+    color: #000;
+}
+
+/******************************INCLUSÃO DE CATEGORIAS************************************/
+
+.cadastro_categorias {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.cadastro_categorias form {
+    padding: 5vw 0px;
+    position: relative;
+}
+
+.cadastro_categorias form div:nth-child(1) {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding: 0px 20px;
+}
+
+.cadastro_categorias form div:nth-child(2) {
+    position: relative;
+    float: right;
+    width: 50%;
+}
+
+.cadastro_categorias form div:nth-child(3) {
+    width: 100%;
+    clear: both;
+    text-align: center;
+    padding-top: 3vw;
+}
+
+.cadastro_categorias form div:nth-child(3) button {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 10px;
+    width: 60%;
+    transition: box-shadow 0.5s;
+}
+
+.cadastro_categorias form div:nth-child(3) button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.cadastro_categorias form div:nth-child(3) button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.cadastro_categorias form div label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cadastro_categorias form div input {
+    position: relative;
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.cadastro_categorias form div img {
+    width: 30vw;
+    border-radius: 10px;
+}
+
+/********************************************************FIM PÁGINA CATEGORIAS***********************************************************************/
+
+/*********************************************************PÁGINA SUBCATEGORIAS***********************************************************************/
+.lista_subcategorias {
+    position: relative;
+}
+
+.lista_subcategorias .nova_subcategoria {
+    position: relative;
+    padding: 10px 25px 2px 0px;
+    text-align: end;
+}
+
+.lista_subcategorias .nova_subcategoria button {
+    position: relative;
+    padding: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+
+.lista_subcategorias .nova_subcategoria button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.lista_subcategorias .nova_subcategoria button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+
+.lista_subcategorias table {
+    position: relative;
+    width: 99%;
+    border: solid 1px #000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 2px;
+    background-color: #fff;
+}
+
+.lista_subcategorias table tbody tr {
+    position: relative;
+    text-align: center;
+}
+
+.lista_subcategorias table tbody tr td {
+    width: 25%;
+}
+
+.lista_subcategorias table tbody tr p {
+    font-weight: 600;
+}
+
+.lista_subcategorias table tbody tr img {
+    position: relative;
+    width: 10vw;
+    border: solid 0.5px #C0C0C0;
+    border-radius: 10px;
+}
+
+.lista_subcategorias table tbody tr button {
+    padding: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.5s;
+}
+
+.lista_subcategorias table tbody tr button:nth-child(1) {
+    background-color: #00a6f3;
+}
+
+.lista_subcategorias table tbody tr button:nth-child(2) {
+    background-color: var(--vermelho_claro);
+}
+
+.lista_subcategorias table tbody tr button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.lista_subcategorias table tbody tr button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.lista_subcategorias .selecaoPaginas {
+    position: relative;
+}
+
+.lista_subcategorias .selecaoPaginas ul li:nth-child(10) {
+    border: none;
+    cursor: default;
+}
+
+/******************************INCLUSÃO DE SUBCATEGORIAS************************************/
+
+.cadastro_subcategorias {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.cadastro_subcategorias form {
+    padding: 5vw 0px;
+    position: relative;
+}
+
+.cadastro_subcategorias form div:nth-child(1) {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding: 0px 20px;
+}
+
+.cadastro_subcategorias form div:nth-child(2) {
+    position: relative;
+    float: right;
+    width: 50%;
+}
+
+.cadastro_subcategorias form div:nth-child(3) {
+    width: 100%;
+    clear: both;
+    text-align: center;
+    padding-top: 3vw;
+}
+
+.cadastro_subcategorias form div:nth-child(3) button {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    padding: 5px 0px;
+    border: none;
+    border-radius: 10px;
+    width: 60%;
+    transition: box-shadow 0.5s;
+}
+
+.cadastro_subcategorias form div:nth-child(3) button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+    border: none;
+}
+
+.cadastro_subcategorias form div:nth-child(3) button:active {
+    box-shadow: 1px 1px 3px 1px #000;
+}
+
+.cadastro_subcategorias form div label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cadastro_subcategorias form div input {
+    position: relative;
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.cadastro_subcategorias form div img {
+    width: 30vw;
+    border-radius: 10px;
+}
+
+/********************************************************FIM PÁGINA SUBCATEGORIAS********************************************************************/
+
+/************************************************************PÁGINA BANNERS**************************************************************************/
+.lista_banners {
+    position: relative;
+}
+
+.lista_banners table {
+    position: relative;
+    border: solid 1px #000;
+    border-radius: 5px;
+    width: 99%;
+    margin: 10px 0px 0px 5px;
+    padding: 5px;
+}
+
+.lista_banners table thead th {
+    border-bottom: solid 1px #000;
+    font-size: 20px;
+    position: relative;
+    line-height: 3vw;
+}
+
+.lista_banners table tbody {
+    text-align: center;
+    position: relative;
+}
+
+.lista_banners table tbody tr:nth-child(1) {
+    border-bottom: solid 1px #000;
+}
+
+.lista_banners table tbody td {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lista_banners table tbody td img {
+    margin: 5px 0px 15px 0px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.lista_banners table tbody td button {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.4vw;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    transition: box-shadow 0.3s;
+    position: relative;
+}
+
+.lista_banners table tbody td button:hover {
+    box-shadow: 0px 0px 6px 2px #000;
+}
+
+.lista_banners table tbody td button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.lista_banners table tbody td .editar {
+    background-color: #03a9f4;
+}
+
+.lista_banners table tbody td .excluir {
+    background-color: var(--vermelho_escuro);
+}
+
+.lista_banners .incluir {
+    padding: 5px 10px;
+    text-align: end;
+    position: relative;
+}
+
+.lista_banners .incluir button {
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.4vw;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #8de02c;
+    border: none;
+    transition: box-shadow 0.3s;
+}
+
+.lista_banners .incluir button:hover {
+    box-shadow: 0px 0px 6px 2px #000;
+}
+
+.lista_banners .incluir button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+#linha3 {
+    display: none;
+    position: relative;
+}
+
+#linha3 td input {
+    width: 20vw;
+    height: 2vw;
+    font-size: 15px;
+    padding: 0.2vw;
+    text-align: center;
+}
+
+#editar3 {
+    display: none;
+}
+
+/***********************************************************FIM PÁGINA BANNERS***********************************************************************/
+
+/************************************************************PÁGINA CARROSSEL**************************************************************************/
+.escolha_carrossel {
+    position: relative;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.escolha_carrossel div {
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.escolha_carrossel div h1 {
+    font-size: 40px;
+}
+
+.escolha_carrossel div figure {
+    position: relative;
+    width: 100%;
+}
+
+.escolha_carrossel div figure figcaption {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.escolha_carrossel div figure a img {
+    width: 50vw;
+    border-radius: 10px;
+    transition: box-shadow 0.8s;
+}
+
+.escolha_carrossel div figure a img:hover {
+    box-shadow: 0px 0px 6px 5px #000;
+}
+
+/******************************CARROSSEL PRINCIPAL**************************************/
+.edicao_carrossel_principal {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+}
+
+.carrossel_principal .adicionar_carrossel {
+    padding: 10px;
+    text-align: end;
+}
+
+.carrossel_principal .adicionar_carrossel button {
+    position: relative;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color: #8de02c;
+    color: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.carrossel_principal .adicionar_carrossel button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.carrossel_principal .adicionar_carrossel button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.edicao_carrossel_principal table {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.edicao_carrossel_principal table tbody {
+    position: relative;
+}
+
+.edicao_carrossel_principal table tbody tr {
+    position: relative;
+
+}
+
+.edicao_carrossel_principal table tbody tr td {
+    width: 33.33%;
+    padding: 5px;
+}
+
+.edicao_carrossel_principal table tbody tr td label {
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+}
+
+.edicao_carrossel_principal table tbody tr td input {
+    position: relative;
+    width: 100%;
+    padding: 6px;
+    font-size: 18px;
+    border: solid 0.5px #C0C0C0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.edicao_carrossel_principal table tbody tr td img {
+    width: 40vw;
+    border-radius: 5px;
+}
+
+.edicao_carrossel_principal table tbody tr td button {
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--vermelho_claro);
+    transition: box-shadow 0.3s;
+}
+
+.edicao_carrossel_principal table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.edicao_carrossel_principal table tbody tr td button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.edicao_carrossel_principal .salvarCarrossel {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.edicao_carrossel_principal .salvarCarrossel button {
+    position: relative;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    border: none;
+    border-radius: 5px;
+    width: 60%;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.edicao_carrossel_principal .salvarCarrossel button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.edicao_carrossel_principal .salvarCarrossel button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+
+}
+
+/******************************CARROSSEL DESTAQUES**************************************/
+.edicao_carrossel_destaques {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+}
+
+.carrossel_destaques .adicionar_carrossel {
+    padding: 10px;
+    text-align: end;
+}
+
+.carrossel_destaques .adicionar_carrossel button {
+    position: relative;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color: #8de02c;
+    color: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.carrossel_destaques .adicionar_carrossel button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.carrossel_destaques .adicionar_carrossel button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.edicao_carrossel_destaques table {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.edicao_carrossel_destaques table tbody {
+    position: relative;
+}
+
+.edicao_carrossel_destaques table tbody tr {
+    position: relative;
+
+}
+
+.edicao_carrossel_destaques table tbody tr td {
+    width: 33.33%;
+    padding: 5px;
+}
+
+.edicao_carrossel_destaques table tbody tr td label {
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+}
+
+.edicao_carrossel_destaques table tbody tr td input {
+    position: relative;
+    width: 100%;
+    padding: 6px;
+    font-size: 18px;
+    border: solid 0.5px #C0C0C0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.edicao_carrossel_destaques table tbody tr td img {
+    width: 10vw;
+    border-radius: 5px;
+}
+
+.edicao_carrossel_destaques table tbody tr td button {
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--vermelho_claro);
+    transition: box-shadow 0.3s;
+}
+
+.edicao_carrossel_destaques table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.edicao_carrossel_destaques table tbody tr td button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.edicao_carrossel_destaques .salvarCarrossel {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.edicao_carrossel_destaques .salvarCarrossel button {
+    position: relative;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    border: none;
+    border-radius: 5px;
+    width: 60%;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.edicao_carrossel_destaques .salvarCarrossel button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.edicao_carrossel_destaques .salvarCarrossel button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+/******************************CARROSSEL PARCEIROS**************************************/
+.edicao_carrossel_parceiros {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+}
+
+.carrossel_parceiros .adicionar_carrossel {
+    padding: 10px;
+    text-align: end;
+}
+
+.carrossel_parceiros .adicionar_carrossel button {
+    position: relative;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background-color: #8de02c;
+    color: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.carrossel_parceiros .adicionar_carrossel button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.carrossel_parceiros .adicionar_carrossel button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.edicao_carrossel_parceiros table {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.edicao_carrossel_parceiros table tbody {
+    position: relative;
+}
+
+.edicao_carrossel_parceiros table tbody tr {
+    position: relative;
+
+}
+
+.edicao_carrossel_parceiros table tbody tr td {
+    width: 33.33%;
+    padding: 5px;
+}
+
+.edicao_carrossel_parceiros table tbody tr td label {
+    font-size: 20px;
+    font-weight: 600;
+    float: left;
+}
+
+.edicao_carrossel_parceiros table tbody tr td input {
+    position: relative;
+    width: 100%;
+    padding: 6px;
+    font-size: 18px;
+    border: solid 0.5px #C0C0C0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.edicao_carrossel_parceiros table tbody tr td img {
+    width: 10vw;
+    border-radius: 5px;
+}
+
+.edicao_carrossel_parceiros table tbody tr td button {
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--vermelho_claro);
+    transition: box-shadow 0.3s;
+}
+
+.edicao_carrossel_parceiros table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.edicao_carrossel_parceiros table tbody tr td button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.edicao_carrossel_parceiros .salvarCarrossel {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.edicao_carrossel_parceiros .salvarCarrossel button {
+    position: relative;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    border: none;
+    border-radius: 5px;
+    width: 60%;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.edicao_carrossel_parceiros .salvarCarrossel button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.edicao_carrossel_parceiros .salvarCarrossel button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+/***********************************************************FIM PÁGINA CARROSSEL***********************************************************************/
+
+/********************************************************PÁGINA CLIENTES CADASTRADOS*******************************************************************/
+.lista_clientes {
+    position: relative;
+    padding: 10px;
+    margin: 0;
+}
+
+.lista_clientes .titulo_clientes {
+    position: relative;
+    margin: 10px 0px;
+}
+
+.lista_clientes table {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.lista_clientes table tbody {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.lista_clientes table tbody tr {
+    position: relative;
+    margin: 5px 0px;
+    padding: 0px;
+}
+
+.lista_clientes table tbody tr td {
+    position: relative;
+    width: 33.33%;
+    padding: 20px 5px;
+}
+
+.lista_clientes table tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+.lista_clientes table tbody tr td label {
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.lista_clientes table tbody tr td input {
+    position: relative;
+    width: 100%;
+    padding: 4px;
+    font-size: 18px;
+    border: solid 0.5px #c0c0c0;
+    border-radius: 5px;
+}
+
+.lista_clientes table tbody tr td button {
+    position: relative;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--vermelho_claro);
+    color: #fff;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.lista_clientes table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.lista_clientes table tbody tr td button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.selecaoPaginasClientes {
+    position: relative;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.selecaoPaginasClientes ul {
+    list-style: none;
+}
+
+.selecaoPaginasClientes ul li {
+    display: inline-block;
+    border: solid 0.5px #000;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0px 2px;
+}
+
+.selecaoPaginasClientes ul li:nth-child(12) {
+    border: none;
+    cursor: default;
+}
+
+.selecaoPaginasClientes ul li:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+}
+
+.selecaoPaginasClientes ul li:nth-child(1), .selecaoPaginas ul li:nth-child(14) {
+    border: none;
+    color: transparent;
+}
+
+.selecaoPaginasClientes ul li a {
+    color: #000;
+}
+
+/******************************************************FIM PÁGINA CLIENTES CADASTRADOS*****************************************************************/
+
+/*********************************************************PÁGINA GERENTES CADASTRADOS******************************************************************/
+.titulo_gerentes {
+    position: relative;
+    padding: 10px;
+}
+
+.adicionar_gerente {
+    text-align: end;
+    position: relative;
+    padding: 0px 20px;
+}
+
+.adicionar_gerente button {
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #8de02c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.adicionar_gerente button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.adicionar_gerente button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+.lista_gerentes {
+    position: relative;
+    padding: 10px;
+}
+
+.lista_gerentes table {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.lista_gerentes table tbody {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.lista_gerentes table tbody tr {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.lista_gerentes table tbody tr td {
+    position: relative;
+    padding: 10px 0px;
+}
+
+.lista_gerentes table tbody tr td img {
+    width: 5vw;
+}
+
+.lista_gerentes table tbody tr td h3 {
+    font-size: 25px;
+}
+
+.lista_gerentes table tbody tr td button:nth-child(1) {
+    background-color: #00a6f3;
+    margin-right: 5px;
+}
+
+.lista_gerentes table tbody tr td button:nth-child(2) {
+    background-color: #f00;
+}
+
+.lista_gerentes table tbody tr td button {
+    padding: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: box-shadow 0.3s;
+}
+
+.lista_gerentes table tbody tr td button:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.lista_gerentes table tbody tr td button:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+/***********************PÁGINA INCLUSÃO DE GERENTES***************************/
+.inclusao_gerentes {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.inclusao_gerentes .titulo {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+}
+
+.formulario_gerente {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.formulario_gerente table {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.formulario_gerente table thead {
+    padding: 20px 0px;
+}
+
+.formulario_gerente table thead tr td h3 {
+    font-size: 25px;
+    margin: 0px 0px 20px 0px;
+}
+
+.formulario_gerente .tabela1 tbody {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.formulario_gerente .tabela1 tbody tr td {
+    position: relative;
+    width: 50%;
+}
+
+.formulario_gerente .tabela1 tbody tr td label {
+    position: relative;
+    font-size: 18px;
+    font-weight: 800;
+    display: block;
+    margin-top: 10px;
+}
+
+.formulario_gerente .tabela1 tbody tr td input {
+    display: inline;
+    position: relative;
+    width: 60%;
+    padding: 4px;
+    font-size: 18px;
+    border: solid 0.5px #c0c0c0;
+    border-radius: 5px;
+}
+
+.formulario_gerente .tabela1 tbody tr img {
+    width: 6vw;
+    display: block;
+    margin: 10px;
+}
+
+.formulario_gerente .tabela2 {
+    position: relative;
+    border-top: ridge 1px #c0c0c0;
+    border-radius: 0px;
+}
+
+.formulario_gerente .tabela2 thead tr td h3 {
+    margin: 20px 0px 15px 10px;
+}
+
+.formulario_gerente .tabela2 tbody tr td {
+    position: relative;
+    padding: 0px 0px 10px 20px;
+}
+
+.formulario_gerente .tabela2 tbody tr td label {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.formulario_gerente .tabela2 tbody tr td input {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.formulario_gerente .salvar {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 20px 0px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.formulario_gerente .salvar input {
+    padding: 4px;
+    width: 60%;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #8de02c;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.formulario_gerente .salvar input:hover {
+    box-shadow: 2px 3px 5px 3px #000;
+}
+
+.formulario_gerente .salvar input:active {
+    box-shadow: 0px 0px 1px 2px #000;
+}
+
+/*********************FIM PÁGINA INCLUSÃO DE GERENTES**************************/
+/*******************************************************FIM PÁGINA GERENTES CADASTRADOS****************************************************************/
+
+/*********************************************************RESPONSIVIDADE DAS PÁGINAS*******************************************************************/
+
+@media (max-width: 992px) {
+    .navigation {
+        left: -300px;
+    }
+
+    .navigation.active {
+        left: 0;
+        width: 300px;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 758px) {
+    .details {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardHeader h2 {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    /*Página Detalhes*/
+    .detalhes .c1 {
+        width: 100%;
+    }
+
+    .detalhes .c2 {
+        float: left;
+        width: 100%;
+    }
+
+    .detalhes .coluna table thead td {
+        font-size: 12px;
+    }
+
+    .c1 table tbody tr td ul li, .c1 table tbody tr td {
+        font-size: 10px;
+    }
+
+    .c2 table tbody tr td ul li, .c2 table tbody tr td {
+        font-size: 10px;
+    }
+
+    .detalhes .coluna table tbody tr td p {
+        font-size: 12px;
+    }
+
+    .listaGerentes tbody tr td p {
+        font-size: 10px;
+    }
+    /*Fim Página Detalhes*/
+
+    /*Página Produtos*/
+    .letras_alfabetica ul li button {
+        width: 5vw;
+        height: 5vw;
+        font-size: 3vw;
+        padding: 0;
+        margin: 0;
+    }
+
+    .subcategorias form select optgroup {
+        font-size: 4vw;
+    }
+
+    .subcategorias form select option {
+        font-size: 4vw;
+    }
+
+    .subcategorias form button {
+        margin-top: 3px;
+    }
+
+    .botao_inclui_produto button {
+        font-size: 3vw;
+        width: 30vw;
+        padding: 1px;
+    }
+
+    .selecao_pordutos table {
+        width: 95%;
+    }
+
+    .selecao_pordutos table thead tr td h3 {
+        font-size: 4vw;
+    }
+
+    .selecao_pordutos table thead tr td img {
+        width: 15vw;
+    }
+
+    .selecao_pordutos table thead tr td input {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .selecao_pordutos table thead tr td label {
+        font-size: 3vw;
+    }
+
+    .selecao_pordutos table thead tr td button {
+        width: 15vw;
+        padding: 1px;
+        font-size: 3vw;
+    }
+
+    .selecaoPaginas ul li {
+        width: 5vw;
+        height: 5vw;
+        font-size: 3vw;
+        padding: 0;
+        margin: 1px;
+    }
+    /*Fim Página Produtos*/
+
+    /*Página Inclusão Produtos*/
+    .manipular_dados {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .manipular_dados .col_1,
+    .manipular_dados .col_2 {
+        display: block;
+        width: 100%;
+    }
+
+    .manipular_dados div label,
+    .manipular_dados div input {
+        font-size: 3vw;
+    }
+
+    .manipular_dados .col_2 select {
+        font-size: 3vw;
+        width: 80%;
+    }
+
+    .manipular_dados .col_2 select option {
+        font-size: 3vw;
+    }
+
+    .manipular_dados .col_2 select optgroup {
+        font-size: 3vw;
+    }
+
+    .manipular_imagens {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .manipular_imagens .col_1 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 5vw;
+    }
+
+    .manipular_imagens .col_2 {
+        width: 100%;
+    }
+
+    .manipular_imagens .adicionar_imagens input,
+    .manipular_imagens .adicionar_imagens button{
+        font-size: 3vw;
+    }
+
+    .manipular_imagens .adicionar_imagens img {
+        width: 35vw;
+    }
+
+    .manipular_imagens div .remover_editar tbody tr td img {
+        width: 25vw;
+    }
+
+    .manipular_imagens div .remover_editar tbody tr td input {
+        width: 5vw;
+    }
+
+    .manipular_imagens div .remover_editar tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .manipular_imagens div .remover_editar tbody tr td button {
+        font-size: 3vw;
+    }
+
+    .mainProdutos .salvar_informacoes button {
+        font-size: 3vw;
+        border-radius: 1.5vw;
+    }
+    /*Fim Página Inclusão Produtos*/
+
+    /*Página Categorias*/
+    .ordem_alfabetica_categorias div ul li {
+        width: 6vw;
+        height: 6vw;
+        font-size: 3vw;
+        padding: 3px 0 0 0;
+        margin: 0.5px;
+    }
+
+    .adicionar_categoria button {
+        font-size: 3vw;
+    }
+
+    .lista_categorias {
+        width: 95%;
+    }
+
+    .lista_categorias table tbody tr td h3 {
+        font-size: 3vw;
+    }
+
+    .lista_categorias table tbody tr td p {
+        font-size: 3vw;
+    }
+
+    .lista_categorias table tbody tr td button {
+        font-size: 3vw;
+        padding: 2px;
+    }
+
+    .paginasCategorias ul li {
+        width: 5vw;
+        height: 5vw;
+        font-size: 3vw;
+        padding: 0;
+        margin: 0px;
+    }
+    /*Fim Página Categorias*/
+
+    /*Página Subcategoria*/
+    .lista_subcategorias .nova_subcategoria button {
+        font-size: 3vw;
+    }
+
+    .lista_subcategorias table tbody tr td h3 {
+        font-size: 3vw;
+    }
+
+    .lista_subcategorias table tbody tr td img {
+        width: 15vw;
+    }
+
+    .lista_subcategorias table tbody tr td p {
+        font-size: 3vw;
+    }
+
+    .lista_subcategorias table tbody tr td button {
+        font-size: 3vw;
+        padding: 2px;
+    }
+    /*Fim Página Subcategoria*/
+
+    /*Página Inclusão Categoria*/
+    .cadastro_categorias {
+        text-align: center;
+    }
+
+    .cadastro_categorias form {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: flex;
+    }
+
+    .cadastro_categorias form div {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cadastro_categorias form div label,
+    .cadastro_categorias form div input {
+        font-size: 3vw;
+        width: 60vw;
+    }
+
+    .cadastro_categorias form div img {
+        width: 50vw;
+    }
+
+    .main .cadastro_categorias form div button {
+        font-size: 3vw;
+        border-radius: 2vw;
+    }
+    /*Fim Página Inclusão Categoria*/
+
+    /*Página Inclusão Subcategoria*/
+    .cadastro_subcategorias {
+        text-align: center;
+    }
+
+    .cadastro_subcategorias form {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        position: flex;
+    }
+
+    .cadastro_subcategorias form div {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cadastro_subcategorias form div label,
+    .cadastro_subcategorias form div input {
+        font-size: 3vw;
+        width: 60vw;
+    }
+
+    .cadastro_subcategorias form div img {
+        width: 50vw;
+    }
+
+    .main .cadastro_subcategorias form div button {
+        font-size: 3vw;
+        border-radius: 2vw;
+    }
+    /*FIm Página Inclusão Subcategoria*/
+
+    /*Página Banners*/
+    .lista_banners table thead th {
+        font-size: 3vw;
+    }
+
+    .lista_banners table tbody td {
+        font-size: 3vw;
+    }
+
+    .lista_banners table tbody td img {
+        width: 25vw;
+    }
+
+    .lista_banners table tbody td button {
+        font-size: 3vw;
+        padding: 2px;
+        margin: 1px 0px;
+        border-radius: 3px;
+    }
+
+    .lista_banners .incluir button {
+        font-size: 3vw;
+        padding: 2px;
+        border-radius: 3px;
+    }
+
+    /*Fim Página Banners*/
+
+    /*Página Carrossel*/
+    .escolha_carrossel div h1 {
+        font-size: 6vw;
+    }
+
+    .escolha_carrossel div figure figcaption {
+        font-size: 4vw;
+    }
+
+    /*Fim Página Carrossel*/
+
+    /*Página Carrossel Principal*/
+    .carrossel_principal div h1 {
+        font-size: 5vw;
+        margin-top: 3vw;
+    }
+
+    .carrossel_principal .adicionar_carrossel button {
+        font-size: 3vw;
+    }
+
+    .edicao_carrossel_principal table tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .edicao_carrossel_principal table tbody tr td input {
+        font-size: 3vw;
+        padding: 1px;
+    }
+
+    .edicao_carrossel_principal table tbody tr td button {
+        font-size: 3vw;
+    }
+
+    .edicao_carrossel_principal .salvarCarrossel button {
+        font-size: 3vw;
+        padding: 5px;
+        width: auto;
+    }
+
+    /*Fim Página Carrossel Principal*/
+
+    /*Página Carrossel Destaques*/
+    .carrossel_destaques div h1 {
+        font-size: 5vw;
+        margin: 5vw 0vw 0vw 2vw;
+    }
+
+    .carrossel_destaques .adicionar_carrossel button {
+        font-size: 3vw;
+    }
+
+    .carrossel_destaques .edicao_carrossel_destaques table tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .carrossel_destaques .edicao_carrossel_destaques table tbody tr td input {
+        font-size: 3vw;
+        padding: 1px;
+    }
+
+    .carrossel_destaques .edicao_carrossel_destaques table tbody tr td img {
+        width: 15vw;
+    }
+
+    .carrossel_destaques .edicao_carrossel_destaques table tbody tr td button {
+        font-size: 3vw;
+    }
+
+    .carrossel_destaques .salvarCarrossel button {
+        font-size: 3vw;
+        width: auto;
+    }
+
+    /*Fim Página Carrossel Destaques*/
+
+    /*Página Carrossel Parceiros*/
+    .carrossel_parceiros div h1 {
+        font-size: 5vw;
+        margin: 5vw 0vw 0vw 2vw;
+    }
+
+    .carrossel_parceiros .adicionar_carrossel button {
+        font-size: 3vw;
+    }
+
+    .carrossel_parceiros .edicao_carrossel_parceiros table tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .carrossel_parceiros .edicao_carrossel_parceiros table tbody tr td input {
+        font-size: 3vw;
+        padding: 1px;
+    }
+
+    .carrossel_parceiros .edicao_carrossel_parceiros table tbody tr td img {
+        width: 15vw;
+    }
+
+    .carrossel_parceiros .edicao_carrossel_parceiros table tbody tr td button {
+        font-size: 3vw;
+    }
+
+    .carrossel_parceiros .salvarCarrossel button {
+        font-size: 3vw;
+        width: auto;
+    }
+
+    /*Fim Página Carrossel Parceiros*/
+
+    /*Página Clientes*/
+    .lista_clientes .titulo_clientes h1 {
+        font-size: 5vw;
+    }
+
+    .lista_clientes table tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .lista_clientes table tbody tr td input {
+        font-size: 3vw;
+        padding: 2px;
+    }
+
+    .lista_clientes table tbody tr td button {
+        font-size: 3vw;
+    }
+
+    .selecaoPaginasClientes ul li {
+        font-size: 3vw;
+        margin: 0.2px;
+    }
+
+    /*Fim Página Clientes*/
+
+    /*Página Gerentes*/
+    .titulo_gerentes h1 {
+        font-size: 5vw;
+    }
+
+    .adicionar_gerente button {
+        font-size: 3vw;
+    }
+
+    .lista_gerentes table tbody tr td img {
+        width: 10vw;
+    }
+
+    .lista_gerentes table tbody tr td h3 {
+        font-size: 3vw;
+    }
+
+    .lista_gerentes table tbody tr td button {
+        font-size: 3vw;
+    }
+
+    /*Fim Página Gerentes*/
+
+    /*Página Inclusão Gerentes*/
+    .inclusao_gerentes .titulo h1 {
+        font-size: 5vw;
+    }
+
+    .inclusao_gerentes .formulario_gerente table thead tr td h3 {
+        font-size: 5vw;
+    }
+
+    .inclusao_gerentes .formulario_gerente table tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .inclusao_gerentes .formulario_gerente table tbody tr td input {
+        font-size: 3vw;
+        padding: 2px;
+    }
+
+    .inclusao_gerentes .formulario_gerente table tbody tr td img {
+        width: 15vw;
+    }
+
+    .inclusao_gerentes .formulario_gerente .tabela2 tbody tr td input {
+        width: 5vw;
+    }
+
+    .inclusao_gerentes .formulario_gerente .tabela2 tbody tr td label {
+        font-size: 3vw;
+    }
+
+    .formulario_gerente .salvar input {
+        font-size: 3vw;
+        width: auto;
+    }
+
+    /*Fim Página Inclusão Gerentes*/
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .details .recentOrders table {
+        overflow-x: auto;
+    }
+
+    .details .recentOrders table {
+        width: 600px;
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle.active {
+        z-index: 10000;
+        right: 0;
+        left: initial;
+    }
+
+    .toggle.active span i::before {
+        color: #fff;
+    }
+
+    .main, .main.active {
+        width: 100%;
+        right: 0;
+    }
+}
+
+/*******************************************************FIM RESPONSIVIDADE DAS PÁGINAS*******************************************************************/

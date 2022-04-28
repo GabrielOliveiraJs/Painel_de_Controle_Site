@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9f00bb2357.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Painel de Controle</title>
+    <style>
+        .navigation ul li:nth-child(4) {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(4):hover {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(4) span {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .navigation ul li:nth-child(4) span:hover {
+            background: #f5f5f5;
+        }
+
+        .navigation ul li:nth-child(4) span .fa-box-open {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!--BARRA DE NAVEGAÇÃO LATERAL-->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="logo"><img src="" alt=""></i></span>
+                        <span class="title nomeEmpresa">
+                            <h2>SITE</h2>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="painel_de_controle.html">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">
+                            Painel de Controle
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="minha_loja.html">
+                        <span class="icon"><i class="fas fa-store"></i></span>
+                        <span class="title">
+                            MINHA LOJA
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html">
+                        <span class="icon"><i class="fas fa-box-open"></i></span>
+                        <span class="title">
+                            PRODUTOS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <span class="icon"><i class="fas fa-stream"></i></span>
+                        <span class="title">
+                            CATEGORIAS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subcategorias.html">
+                        <span class="icon"><i class="fas fa-window-restore"></i></span>
+                        <span class="title">
+                            SUB-CATEGORIAS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="banners.html">
+                        <span class="icon"><i class="fas fa-bookmark"></i></span>
+                        <span class="title">
+                            BANNERS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="carrossel.html">
+                        <span class="icon"><i class="fab fa-buffer"></i></span>
+                        <span class="title">
+                            CARROSSEL
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clientes.html">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="title">
+                            CLIENTES CADASTRADOS
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="gerentes.html">
+                        <span class="icon"><i class="fas fa-user-edit"></i></span>
+                        <span class="title">
+                            GERENTES
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--FIM BARRA DE NAVEGAÇÃO LATERAL-->
+
+        <!--BARRA DO TOPO-->
+        <div class="main mainProdutos">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu()">
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+                <div class="user">
+                    <img src="imagens/user_placeholder.jpg" alt="">
+                </div>
+            </div>
+            <!--FIM BARRA DO TOPO-->
+
+            <div>
+                <!--EDIÇÃO DOS DADOS DO PRODUTO-->
+                <div class="form-group manipular_dados">
+                    <div class="col_1">
+                        <label for="nome_produto">NOME</label>
+                        <input class="form-control" type="text" id="nome_produto">
+
+                        <label for="descricao">DESCRIÇÃO</label>
+                        <textarea name="" id="descricao" cols="30" rows="1" class="form-control"></textarea>
+
+                        <label for="marca">MARCA</label>
+                        <input type="text" id="marca" class="form-control">
+
+                        <label for="codigo">CÓDIGO DO PRODUTO</label>
+                        <input type="text" id="codigo" class="form-control" maxlength="6">
+
+                        <!--ESCOLHA ENTRE TAGS DE PRODUTOS-->
+                        <!--TAG 1-->
+                        <label for="tag1">TAG 1:</label>
+                        <select name="tag1" id="tag1" class="form-control">
+                            <option value="Selecione">Selecione</option>
+                            <option value="bombas_irrigacao">#Bombas Irrigação</option>
+                            <option value="caixas">#Caixas</option>
+                            <option value="ferramentas_eletricas">#Ferramentas Elétricas</option>
+                            <option value="ferramentas_manuais">#Ferramentas Manuais</option>
+                            <option value="lavadoras">#Lavadoras</option>
+                            <option value="maquinas_agricolas">#Máquinas Agrícolas</option>
+                            <option value="maquinas_gastronomia">#Máquinas Gastronomia</option>
+                            <option value="motobombas">#Motobombas</option>
+                            <option value="panelas">#Panelas</option>
+                            <option value="termicos">#Térmicos</option>
+                            <option value="utensilios">#Utensílios</option>
+                        </select>
+                        <!--TAG 2-->
+                        <label for="tag2">TAG 2:</label>
+                        <select name="tag2" id="tag2" class="form-control">
+                            <option value="Selecione">Selecione</option>
+                            <option value="bombas_irrigacao">#Bombas Irrigação</option>
+                            <option value="caixas">#Caixas</option>
+                            <option value="ferramentas_eletricas">#Ferramentas Elétricas</option>
+                            <option value="ferramentas_manuais">#Ferramentas Manuais</option>
+                            <option value="lavadoras">#Lavadoras</option>
+                            <option value="maquinas_agricolas">#Máquinas Agrícolas</option>
+                            <option value="maquinas_gastronomia">#Máquinas Gastronomia</option>
+                            <option value="motobombas">#Motobombas</option>
+                            <option value="panelas">#Panelas</option>
+                            <option value="termicos">#Térmicos</option>
+                            <option value="utensilios">#Utensílios</option>
+                        </select>
+                        <!--TAG 3-->
+                        <label for="tag3">TAG 3:</label>
+                        <select name="tag3" id="tag3" class="form-control">
+                            <option value="Selecione">Selecione</option>
+                            <option value="bombas_irrigacao">#Bombas Irrigação</option>
+                            <option value="caixas">#Caixas</option>
+                            <option value="ferramentas_eletricas">#Ferramentas Elétricas</option>
+                            <option value="ferramentas_manuais">#Ferramentas Manuais</option>
+                            <option value="lavadoras">#Lavadoras</option>
+                            <option value="maquinas_agricolas">#Máquinas Agrícolas</option>
+                            <option value="maquinas_gastronomia">#Máquinas Gastronomia</option>
+                            <option value="motobombas">#Motobombas</option>
+                            <option value="panelas">#Panelas</option>
+                            <option value="termicos">#Térmicos</option>
+                            <option value="utensilios">#Utensílios</option>
+                        </select>
+                    </div>
+
+                    <!--ESCOLHA DA SUBCATEGORIA DO PRODUTO-->
+                    <div class="col_2">
+                        <label for="subcategorias">CATEGORIA</label>
+                        <select name="subcategorias" id="subcategorias" class="form-control">
+                            <option value="Selecione">SELECIONE</option>
+                            <optgroup label="AGRÍCOLA">
+                                <option value="Adesivos_e_Colas">Adesivos e Colas</option>
+                                <option value="Acessorios">Acessórios</option>
+                                <option value="Rocadeiras_e_Cortadores">Roçadeiras e Cortadores</option>
+                                <option value="Engenhos_e_Moendas">Engenhos e Moendas</option>
+                                <option value="Lubrificantes_para_Maquinario">Lubrificantes para Máquinario</option>
+                                <option value="Motocultivadores">Motocultivadores</option>
+                                <option value="Motosseras">Motosseras</option>
+                                <option value="Picadores_e_Trituradores">Picadores e Trituradores</option>
+                                <option value="Pulverizadores_e_Atomizadores">Pulverizadores e Atomizadores</option>
+                                <option value="Sementes">Sementes</option>
+                                <option value="Sopradores_e_Aspiradores">Sopradores e Aspiradores</option>
+                                <option value="Telas">Telas</option>
+                                <option value="Produtos_Veterinarios">Produtos Veterinários</option>
+                            </optgroup>
+                            <optgroup label="COZINHAS E RESTAURANTES">
+                                <option value="Amaciadores_Despolpadeiras">Amaciadores / Despolpadeiras</option>
+                                <option value="Batedeiras_Batedores">Batedeiras / Batedores</option>
+                                <option value="Cafeteiras">Cafeteiras</option>
+                                <option value="Chapas_Sanduicheiras">Chapas / Sanduicheiras</option>
+                                <option value="Cilindros_Sovadeiras">Cilindros / Sovadeiras</option>
+                                <option value="Derretedeiras">Derretedeiras</option>
+                                <option value="Escorredores">Escorredores</option>
+                                <option value="Utensilios">Utensílios</option>
+                                <option value="Esterelizadores">Esterelizadores</option>
+                                <option value="Estufas_Carros_Termicos">Estufas / Carros Térmicos</option>
+                                <option value="Facas_Afiadores">Facas / Afiadores</option>
+                                <option value="Fatiadores_Cortadores">Fatiadores / Cortadores</option>
+                                <option value="Filtros_Bebedouros">Filtros / Bebedouros</option>
+                                <option value="Formas_Assadeiras">Formas / Assadeiras</option>
+                                <option value="Fornos_Fogoes">Fornos / Fogões</option>
+                                <option value="Fritadeiras">Fritadeiras</option>
+                                <option value="Garrafas_Caixas_Termicas">Garrafas / Caixas Térmicas</option>
+                                <option value="Liquidificadores_Espremedores">Liquidificadores / Espremedores</option>
+                                <option value="Maquinas_Diversas">Máquinas Diversas</option>
+                                <option value="Marmiteiros">Marmiteiros</option>
+                                <option value="Misturadores">Misturadores</option>
+                                <option value="Modeladores_Amassadeiras">Modeladores / Amassadeiras</option>
+                                <option value="Panelas_Diversos">Panelas / Diversos</option>
+                                <option value="Processadores_de_Alimento">Processadores de Alimento</option>
+                                <option value="Refresqueiras">Refresqueiras</option>
+                                <option value="Tachos_Pasteleiros">Tachos / Pasteleiros</option>
+                                <option value="Torres_de_Chopp">Torres de Chopp</option>
+                            </optgroup>
+                            <optgroup label="DEFENSIVOS E FERTILIZANTES">
+                                <option value="Fertilizantes">Fertilizantes</option>
+                                <option value="Inseticidas">Inseticidas</option>
+                                <option value="Fungicidas">Fungicidas</option>
+                                <option value="Herbicidas">Herbicidas</option>
+                                <option value="Linha_Profissional">Linha Profissional</option>
+                                <option value="Pragas_Urbanas">Pragas Urbanas</option>
+                            </optgroup>
+                            <optgroup label="FERRAMENTAS">
+                                <option value="Cadeados">Cadeados</option>
+                                <option value="Caixas">Caixas</option>
+                                <option value="Carregadores">Carregadores</option>
+                                <option value="Construcao">Construção</option>
+                                <option value="Cordas">Cordas</option>
+                                <option value="EPIS">E.P.I.S</option>
+                                <option value="Escadas">Escadas</option>
+                                <option value="Ferramentas_Acessorios">Ferramentas / Acessórios</option>
+                                <option value="Manuais">Manuais</option>
+                                <option value="Marcenaria">Marcenaria</option>
+                                <option value="Serras">Serras</option>
+                            </optgroup>
+                            <optgroup label="IRRIGAÇÃO E HIDRÁULICA">
+                                <option value="Aspersores">Aspersores</option>
+                                <option value="Bocais">Bocais</option>
+                                <option value="Bombas">Bombas</option>
+                                <option value="Conexoes">Conexões</option>
+                                <option value="Conexoes_Galvanizadas">Conexões Galvanizadas</option>
+                                <option value="Controladores">Controladores</option>
+                                <option value="Esgoto">Esgoto</option>
+                                <option value="Mangueiras">Mangueiras</option>
+                                <option value="Sensores">Sensores</option>
+                                <option value="Valvulas">Válvulas</option>
+                            </optgroup>
+                            <optgroup label="MÁQUINAS">
+                                <option value="Aspiradores">Aspiradores</option>
+                                <option value="Betoneiras">Betoneiras</option>
+                                <option value="Compressores">Compressores</option>
+                                <option value="Lavadoras_de_Alta_Pressao">Lavadoras de Alta Pressão</option>
+                                <option value="Maquinas_de_Solda">Máquinas de Solda</option>
+                                <option value="Moto_Esmeril">Moto Esmeril</option>
+                                <option value="Motobombas">Motobombas</option>
+                                <option value="Motores_Geradores">Motores / Geradores</option>
+                            </optgroup>
+                            <optgroup label="OUTROS">
+                                <option value="Ambulantes">Ambulantes</option>
+                                <option value="Carro_Armazem">Carro Armazém</option>
+                                <option value="Conduites_Conectores">Conduítes / Conectores</option>
+                                <option value="Diversos">Diversos</option>
+                                <option value="Gaveteiros">Gaveteiros</option>
+                                <option value="Isoladores">Isoladores</option>
+                                <option value="Lixeiras">Lixeiras</option>
+                                <option value="Lonas">Lonas</option>
+                                <option value="Mesas_Cadeiras">Mesas / Cadeiras</option>
+                                <option value="Pallets_Estrados">Pallets / Estrados</option>
+                                <option value="Peneiras">Peneiras</option>
+                                <option value="Pneus_Camaras">Pneus / Câmaras</option>
+                                <option value="Rodas_Rodizios">Rodas / Rodízios</option>
+                                <option value="Sinalizadores">Sinalizadores</option>
+                                <option value="Utilidades_Diversas">Utilidades / Diversas</option>
+                                <option value="Vasilhames_Caixas">Vasilhames / Caixas</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                        <label for="informacoes">INFORMAÇÕES</label>
+                        <textarea name="" id="informacoes" cols="30" rows="8" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <!--EDIÇÃO DAS IMAGENS DO PRODUTO-->
+                <div class="form-group manipular_imagens">
+
+                    <!--CAMPO PARA ADICIONAR IMAGENS-->
+                    <div class="col_1 adicionar_imagens" id="container_file">
+                        <input type="file" class="form-control arquivo" id="adicionar_imagem" name="file">
+
+                        <button class="btn btn-success" type="button" onclick="adiciona_imagem()">ADICIONAR</button>
+
+                        <img class="img-fluid img-thumbnail" src="imagens/Placeholder-img.png" alt=""
+                            id="placeholder">
+
+                        <img class="img-fluid img-thumbnail" src="imagens/Placeholder-img.png" alt="" id="fonte">
+                    </div>
+
+                    <!--LISTA COM AS IMAGENS ADICIONADAS (MÁXIMO DE 4)-->
+                    <div class="col_2">
+
+                        <!--IMAGEM 1-->
+                        <table class="remover_editar">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="imagens/Placeholder-img.png" class="img-fluid img-thumbnail"
+                                            alt="" id="imagem1">
+                                    </td>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" value="0" id="checkbox1"
+                                            checked>
+                                        <label class="form-check-label" for="checkbox1">
+                                            PRINCIPAL
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="remove_imagem(x = 1)">REMOVER</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--IMAGEM 2-->
+                        <table class="remover_editar">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="imagens/Placeholder-img.png" class="img-fluid img-thumbnail"
+                                            alt="" id="imagem2">
+                                    </td>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" value="0" id="checkbox2">
+                                        <label class="form-check-label" for="checkbox2">
+                                            PRINCIPAL
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="remove_imagem(x = 2)">REMOVER</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--IMAGEM 3-->
+                        <table class="remover_editar">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="imagens/Placeholder-img.png" class="img-fluid img-thumbnail"
+                                            alt="" id="imagem3">
+                                    </td>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" value="0" id="checkbox3">
+                                        <label class="form-check-label" for="checkbox3">
+                                            PRINCIPAL
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="remove_imagem(x = 3)">REMOVER</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--IMAGEM 4-->
+                        <table class="remover_editar">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="imagens/Placeholder-img.png" class="img-fluid img-thumbnail"
+                                            alt="" id="imagem4">
+                                    </td>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" value="0" id="checkbox4">
+                                        <label class="form-check-label" for="checkbox4">
+                                            PRINCIPAL
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger" onclick="remove_imagem(x = 4)">REMOVER</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="salvar_informacoes">
+                    <button onclick="gerar_informacoes()">SALVAR INFORMAÇÕES</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/script.js"></script>
+
+        <script>
+            function toggleMenu() {
+                let toggle = document.querySelector('.toggle');
+                let navigation = document.querySelector('.navigation');
+                let main = document.querySelector('.main');
+
+                toggle.classList.toggle('active');
+                navigation.classList.toggle('active');
+                main.classList.toggle('active');
+            };
+        </script>
+</body>
+
+</html>
